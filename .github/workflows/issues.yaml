@@ -3,6 +3,7 @@ on: issues
 jobs:
   info:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'issues' }}
     steps:
       - name: Output Issue Related Stuff
-        run: echo "${{ toJSON(github) }}"
+        run: echo "${{ toJSON(github.event.issue) }}"
