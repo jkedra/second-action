@@ -6,4 +6,7 @@ jobs:
     if: ${{ github.event_name == 'issues' }}
     steps:
       - name: Output Issue Related Stuff
-        run: echo "${{ toJSON(github.event.issue) }}"
+        run: |
+          echo "Action: ${{ github.event.action }} " 
+          echo "Body:   ${{ github.event.body }} "
+          echo "${{ toJSON(github.event.issue) }}"
