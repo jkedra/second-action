@@ -25,5 +25,5 @@ jobs:
 
   deploy:
     needs: test
-    uses: ./.github/workflows/reusable_workflow.yaml@main
+    uses: ./.github/workflows/reusable_workflow.yaml
 
