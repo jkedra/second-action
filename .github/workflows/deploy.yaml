@@ -25,20 +25,5 @@ jobs:
 
   deploy:
     needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: get code
-        uses: actions/checkout@v4
-      - name: install node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - name: install dependencies
-        run: npm ci
-      - name: build project
-        run: npm run build
-      - name: deploy
-        run: echo deploying....
-
-
+    uses: .github/workflows/reusable_workflow.yaml
 
