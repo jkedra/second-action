@@ -21,6 +21,7 @@ jobs:
         run: npm test
 
   report1:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: output-content
