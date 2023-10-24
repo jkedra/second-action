@@ -2,11 +2,8 @@
 name: Deploy Project
 on: [push, workflow_dispatch]
 jobs:
-
   test:
-
     runs-on: ubuntu-latest
-
     steps:
       - name: get code
         uses: actions/checkout@v4
@@ -22,6 +19,12 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm test
+
+  report1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: output-content
+        run: ls -lR
 
   deploy:
     needs: test
